@@ -27,7 +27,7 @@ module.exports = {
     // path: path.resolve(__dirname, 'dist'),
     // filename: './vendor.js',
     filename: '[name].[hash].js',
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../blog/dist'),
     chunkFilename: '[name].[hash].js',
   },
   resolve: {
@@ -96,7 +96,7 @@ module.exports = {
   ],
 }
 
-fs.copy('./app/images', './dist/images')
-fs.copy('./app/iconfont', './dist/iconfont')
+fs.copy('./app/images', '../images')
+// fs.copy('./app/iconfont', '../')
 // CopyDir({ from: './app/images', to: './dist/images' })
 // CopyDir('./app/iconfont', './dist/iconfont')

@@ -4,8 +4,8 @@
   "description": "r-blog",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.development.config.js --process --hot --inline",
-    "build": "webpack --config ./webpack.product.config.js",
+    "start": "webpack-dev-server --config webpack.development.config.js --process --hot --inline",
+    "build": "webpack --config webpack.product.config.js",
     "lint": "eslint ./ --cache --fix --ignore-pattern .gitignore"
   },
   "author": "duxiaodu",
