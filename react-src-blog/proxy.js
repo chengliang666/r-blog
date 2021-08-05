@@ -1,18 +1,18 @@
-var request = require('request'),
+const request = require('request'),
     url = require('url');
 
-var config = require('./.config.json');
+const config = require('./.config.json');
 
-var CAS_SERVER = config.DEFAULT_CAS_SERVER;
+const CAS_SERVER = config.DEFAULT_CAS_SERVER;
 
-var args = process.argv.slice(2),
+let args = process.argv.slice(2),
     targetIndex = process.env.PROXY_TARGET || "DEFAULT",
     Target, COOKIE = "";
 
 Target = config.TARGET_LIST[targetIndex.toUpperCase()];
 
 module.exports = function() {
-    return config.proxyPaths.map((path, inndex) => {
+    return config.proxyPaths.map((path) => {
         return {
             path,
             target: Target,
@@ -22,10 +22,10 @@ module.exports = function() {
     })
 }
 
-function proxyPass(req, res, options) {
+function proxyPass(req, res) {
     res.on('finish', function(){
         if (res.statusCode === 401 && res._headers.urltoredirectto) {
-            var location = res._headers.urltoredirectto;
+            const location = res._headers.urltoredirectto;
             console.error('COOKIE expired, redirect to ',location, ' for new COOKIE');
             login({
                 username: config.username,
@@ -35,7 +35,7 @@ function proxyPass(req, res, options) {
                 console.log('COOKIE has been set as ', cookieKV);
                 COOKIE = cookieKV;
             })
-        };
+        }
     });
     req.headers.cookie = COOKIE;
 }
@@ -56,12 +56,12 @@ function login(options, callback) {
     getTGTLocation(username, password, function(error, location){
         getTicket(location, service, function(ticket){
             request.get(service+"?ticket="+ticket, function(error, response, body){
-                var cookieKV;
+                let cookieKV;
                 if (~response.request.uri.href.indexOf('jsessionid')) {
                     cookieKV = response.request.uri.href.split(";")[1].toUpperCase();
                 }else {
-                    var referer = response.request.headers.referer,
-                        cookieKV = referer.split(";")[1].toUpperCase();
+                    const referer = response.request.headers.referer;
+                    cookieKV = referer.split(";")[1].toUpperCase();
                 }
 
                 callback(cookieKV);
@@ -78,7 +78,7 @@ function getTGTLocation(username, password, callback) {
             password: password
         }
     }, function(error, response, body){
-        var location = response.headers.location;
+        const location = response.headers.location;
         callback(null, location)
     })
 }

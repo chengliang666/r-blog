@@ -1,11 +1,7 @@
 {
-  "name": "duxiaodu",
+  "name": "r-blog",
   "version": "0.0.1",
-  "description": "duxiaodu",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/duxianwei520/react"
-  },
+  "description": "r-blog",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.development.config.js --process --hot --inline",
@@ -14,6 +10,7 @@
   },
   "author": "duxiaodu",
   "devDependencies": {
+    "actions": "^1.3.0",
     "babel": "~6.5.2",
     "babel-cli": "~6.11.4",
     "babel-core": "~6.10.4",
@@ -37,6 +34,7 @@
     "eslint-plugin-react": "~6.1.1",
     "file-loader": "~0.9.0",
     "ghooks": "^1.3.2",
+    "history": "^5.0.0",
     "http-proxy": "~1.14.0",
     "jsdom": "~9.4.1",
     "jshint": "^2.9.4",
@@ -48,6 +46,7 @@
     "react-addons-test-utils": "~15.2.1",
     "react-hot-loader": "~1.3.0",
     "redux-ava": "~2.1.0",
+    "request": "^2.88.2",
     "sinon": "~1.17.4",
     "style-loader": "~0.13.1",
     "url-loader": "~0.5.7",

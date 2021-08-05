@@ -1,8 +1,8 @@
 /*
- * @Author: duxianwei
- * @Date: 2017-08-07 20:10:37
- * @Last Modified by: duxianwei
- * @Last Modified time: 2017-08-11 18:28:03
+ * @Author: laichengliang
+ * @Date: 2018-08-07 20:10:37
+ * @Last Modified by: laichengliang
+ * @Last Modified time: 2018-08-11 18:28:03
  */
 
 const webpack = require('webpack')
@@ -32,14 +32,14 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.json'],
     alias: {
-      components: __dirname + '/app/components',
-      actions: __dirname + '/app/actions',
-      api: __dirname + '/app/api',
-      reducers: __dirname + '/app/reducers',
-      utils: __dirname + '/app/utils',
-      constants: __dirname + '/app/constants',
-      controllers: __dirname + '/app/controllers',
-      style: __dirname + '/app/style',
+      components: `${__dirname}/app/components`,
+      actions: `${__dirname}/app/actions`,
+      api: `${__dirname}/app/api`,
+      reducers: `${__dirname}/app/reducers`,
+      utils: `${__dirname}/app/utils`,
+      constants: `${__dirname}/app/constants`,
+      controllers: `${__dirname}/app/controllers`,
+      style: `${__dirname}/app/style`,
     },
   },
   module: {
@@ -56,6 +56,7 @@ module.exports = {
       {
         test: /\.css/,
         // loader: 'style!css',
+        // eslint-disable-next-line max-len
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap=true!postcss-loader?sourceMap=true!less-loader?sourceMap=<true></true>'),
       },
       {
@@ -89,7 +90,7 @@ module.exports = {
       template: path.join(__dirname, 'app/index.html'),
     }),
     new OpenBrowserPlugin({
-      url: `http://localhost:${PORT}/#/login`,
+      url: `http://localhost:${PORT}/`,
     }),
     // 分析代码
     new BundleAnalyzerPlugin({ analyzerPort: 8189 }),

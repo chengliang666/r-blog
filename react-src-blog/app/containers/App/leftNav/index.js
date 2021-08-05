@@ -31,12 +31,12 @@ export default class LeftNav extends Component {
 
   componentWillMount() {
     // 初始化左侧菜单是mini模式还是正常模式
-    if (sessionStorage.getItem('isLeftNavMini') == 'false') {
+    if (sessionStorage.getItem('isLeftNavMini') === 'false') {
       this.setState({
         isLeftNavMini: false,
       })
     }
-    if (sessionStorage.getItem('isLeftNavMini') == 'true') {
+    if (sessionStorage.getItem('isLeftNavMini') === 'true') {
       this.setState({
         isLeftNavMini: true,
       })
@@ -92,33 +92,32 @@ export default class LeftNav extends Component {
       if (!item.children) {
         return (
           // <SubMenu key={index} title={item.name}>
-            <Menu.Item key={item.url ? item.url : item.id} name={item.name}>
-              <Icon type={item.icon} title={item.name} />
-              <span className="menu-name">{item.name}</span>
-            </Menu.Item>
+          <Menu.Item key={item.url ? item.url : item.id} name={item.name}>
+            <Icon type={item.icon} title={item.name} />
+            <span className="menu-name">{item.name}</span>
+          </Menu.Item>
           // </SubMenu>
         )
-      } else {
-        return (
-          <SubMenu key={index} title={
-            <span>
-              <Icon type="caret-down" title={item.name} />
-              <span className="menu-name">{item.name}</span>
-            </span>}>
-            {
-              item.url ?
-                <Menu.Item key={item.url} name={item.name}>
-                  <Icon type={item.icon} title={item.name} />
-                  <span className="menu-name">{item.name}</span>
-                </Menu.Item> : null
-            }
-
-            {
-              item.children && item.children.length > 0 ? self.renderLeftNav(item.children) : null
-            }
-          </SubMenu>
-        )
       }
+      return (
+        <SubMenu key={index} title={
+          <span>
+            <Icon type="caret-down" title={item.name} />
+            <span className="menu-name">{item.name}</span>
+          </span>}>
+          {
+            item.url ?
+              <Menu.Item key={item.url} name={item.name}>
+                <Icon type={item.icon} title={item.name} />
+                <span className="menu-name">{item.name}</span>
+              </Menu.Item> : null
+          }
+
+          {
+            item.children && item.children.length > 0 ? self.renderLeftNav(item.children) : null
+          }
+        </SubMenu>
+      )
     })
   }
 

@@ -1,19 +1,19 @@
 /*
- * @Author: dupi
- * @Date: 2017-06-28 17:16:12
- * @Last Modified by: duxianwei
- * @Last Modified time: 2017-08-14 17:44:24
+ * @Author: laichengliang
+ * @Date: 2018-06-28 17:16:12
+ * @Last Modified by: laichengliang
+ * @Last Modified time: 2018-08-14 17:44:24
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Card, Row, Col } from 'antd'
-
 
 @connect(
   (state, props) => ({
     config: state.config,
   })
 )
+
 export default class app extends Component {
   constructor(props) {
     super(props)
@@ -180,7 +180,7 @@ export default class app extends Component {
             </Card>
           </Col>
         </Row>
-        <div className="footer">关于eslint的配置，大家可以看这里，<a href="https://github.com/duxianwei520/react/blob/master/.eslintrc.json" target="_blank">eslint配置文件</a>，然后，以上仅代表个人观点，对了，关于<a href="https://github.com/duxianwei520/react" target="_blank">react+redux+fetch+antd+webpack+es6/7</a>的框架的源码点击这里噢</div>
+        <div className="footer">关于eslint的配置，大家可以看这里，<a href="https://github.com/chengliang666/reactProject/blob/master/.eslintrc.json" target="_blank">eslint配置文件</a>，然后，以上仅代表个人观点，对了，关于<a href="https://github.com/chengliang666/reactProject" target="_blank">react+redux+fetch+antd+webpack+es6/7</a>的框架的源码点击这里噢</div>
       </div>
     )
   }

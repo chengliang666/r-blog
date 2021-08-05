@@ -1,17 +1,17 @@
 /*
- * @Author: duxianwei
- * @Date: 2017-08-07 20:10:37
- * @Last Modified by: duxianwei
- * @Last Modified time: 2017-08-11 11:54:11
+ * @Author: laichengliang
+ * @Date: 2018-08-07 20:10:37
+ * @Last Modified by: laichengliang
+ * @Last Modified time: 2018-08-11 11:54:11
  */
 
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const fs = require('fs-extra')
 // const casProxy = require('./proxy');
+// eslint-disable-next-line max-len
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 // const PORT = 3010
@@ -33,14 +33,14 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.json'],
     alias: {
-      components: __dirname + '/app/components',
-      actions: __dirname + '/app/actions',
-      api: __dirname + '/app/api',
-      reducers: __dirname + '/app/reducers',
-      utils: __dirname + '/app/utils',
-      constants: __dirname + '/app/constants',
-      controllers: __dirname + '/app/controllers',
-      style: __dirname + '/app/style',
+      components: `${__dirname}/app/components`,
+      actions: `${__dirname}/app/actions`,
+      api: `${__dirname}/app/api`,
+      reducers: `${__dirname}/app/reducers`,
+      utils: `${__dirname}/app/utils`,
+      constants: `${__dirname}/app/constants`,
+      controllers: `${__dirname}/app/controllers`,
+      style: `${__dirname}/app/style`,
     },
   },
   module: {

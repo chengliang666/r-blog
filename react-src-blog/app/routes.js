@@ -8,8 +8,13 @@ import Welcome from './pages/welcome'
 
 const editor = (location, cb) => {
   require.ensure([], require => {
-    cb(null, require('./pages//article/editor').default)
+    cb(null, require('./pages/article/editor').default)
   }, 'editor')
+}
+const houseManage = (location, cb) => {
+  require.ensure([], require => {
+    cb(null, require('./pages/house/houseManage').default)
+  }, 'houseManage')
 }
 
 const routes = (
@@ -17,7 +22,7 @@ const routes = (
     <Route path="/" component={App}>
       <IndexRoute component={Welcome} />
       <Route path="/article/editor" getComponent={editor} />
-
+      <Route path="/house/houseManage" getComponent={houseManage} />
     </Route>
   </Route>
 );

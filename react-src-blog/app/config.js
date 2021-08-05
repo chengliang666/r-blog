@@ -1,8 +1,9 @@
 export default (() => {
   window.$GLOBALCONFIG = {};
+  // eslint-disable-next-line wrap-iife
   +function (global) {
     // 本地开发打开的路径以及端口
-    global.$ctx = 'http://localhost:8080';
+    global.$ctx = 'http://localhost:3020';
 
     // 用户登录信息
     global.STAFF = {

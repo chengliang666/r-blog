@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import ReactDom from 'react-dom'
 import { connect } from 'react-redux'
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button } from 'antd'
 import Third from './third'
 
 @connect(
@@ -21,7 +19,6 @@ export default class sub extends Component {
   componentDidMount() {
 
   }
-
 
   render() {
     return (

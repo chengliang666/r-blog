@@ -1,8 +1,8 @@
 /*
- * @Author: dupi
- * @Date: 2017-06-28 17:16:12
- * @Last Modified by: duxianwei
- * @Last Modified time: 2017-08-08 20:55:31
+ * @Author: laichengliang
+ * @Date: 2018-06-28 17:16:12
+ * @Last Modified by: laichengliang
+ * @Last Modified time: 2018-08-08 20:55:31
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -10,7 +10,7 @@ import { Link } from 'react-router'
 import { Button, Spin, Form, Input, Table } from 'antd'
 import {
   fetchHouseCheckList,
-} from 'actions/house'
+} from '../../actions/house'
 
 const FormItem = Form.Item
 

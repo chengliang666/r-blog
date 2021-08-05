@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import ReactDom from 'react-dom'
 import { connect } from 'react-redux'
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button } from 'antd'
-import Third from './third'
+// import Third from './third'
 
 @connect(
     (state, props) => ({
@@ -22,12 +20,11 @@ export default class sub extends Component {
 
   }
 
-
   render() {
     return (
       <div className="page">
         <h1>我是二级页面</h1>
-        <Third />
+        {/* <Third />*/}
       </div>
     )
   }

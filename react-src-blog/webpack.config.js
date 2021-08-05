@@ -3,7 +3,7 @@
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 // // const casProxy = require('./proxy');
-// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // module.exports = {
 //   entry: {
@@ -38,25 +38,25 @@
 //         test: /\.js[x]?$/,
 //         exclude: /node_modules/,
 //         loader: 'react-hot!babel',
-//       }, 
+//       },
 //       {
 //         test: /\.less$/,
 //         loader: 'style!css!postcss!less',
-//       }, 
+//       },
 //       {
 //         test: /\.css/,
 //         loader: 'style!css',
-//       }, 
+//       },
 //       {
 //         test: /\.(png|jpg)$/,
 //         loader: 'url-loader?limit=8192',
-//       }, 
+//       },
 //     ],
 //   },
 //   plugins: [
 //     new webpack.DefinePlugin({
-//       "process.env": { 
-//          NODE_ENV: JSON.stringify("production") 
+//       "process.env": {
+//          NODE_ENV: JSON.stringify("production")
 //        }
 //     }),
 //     new webpack.optimize.OccurenceOrderPlugin(),
