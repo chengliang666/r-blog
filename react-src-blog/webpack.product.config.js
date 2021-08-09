@@ -10,6 +10,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const fs = require('fs-extra')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const casProxy = require('./proxy');
 // eslint-disable-next-line max-len
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -91,6 +92,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'app/index.html'),
     }),
+    // 用于清除output.path目录内容
+    new CleanWebpackPlugin(), // 这样就可以了，里面不需要加什么路径了
     // 分析代码
     // new BundleAnalyzerPlugin({ analyzerPort: 8188 }),
   ],
